@@ -1,7 +1,11 @@
 import React from "react";
 
 const NewPlace = () => {
-  return <h2>New Place work!</h2>;
+  return(
+   <div>
+    <h1>Hello World</h1>
+   </div>
+  )
 };
 
 export default NewPlace;

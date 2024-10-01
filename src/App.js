@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Redirect, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch,
+} from "react-router-dom";
 
 import GoalList from "./components/GoalList/GoalList";
 import NewGoal from "./components/NewGoal/NewGoal";
 import Users from "./user/pages/Users";
 import NewPlace from "./places/pages/NewPlace";
+import UserPlaces from "./places/pages/UserPlaces";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 const App = () => {
@@ -25,12 +31,15 @@ const App = () => {
     //   <NewGoal onAddGoal={addNewGoalHandler}/>
     //   <GoalList goals={courseGoals}/>
     // </div>
-    
+
     <Router>
       <MainNavigation />
       <Switch>
         <Route path="/" exact>
           <Users />
+        </Route>
+        <Route path="/:userId/places" exact>
+          <UserPlaces />
         </Route>
         <Route path="/places/new" exact>
           <NewPlace />
